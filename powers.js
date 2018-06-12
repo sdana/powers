@@ -6,19 +6,29 @@
         2. Add the `enabled` class
 
 */
-const classesToggle = (selector, classToToggle) => {
-    document.querySelector(selector).classList.toggle(classToToggle)
+const targetButton = () => {
+    let targetClass = event.target.id.slice(9).toLowerCase()
+    console.log(targetClass)
+    document.querySelector(`#${targetClass}`).classList.toggle("enabled")
+    document.querySelector(`#${targetClass}`).classList.toggle("disabled")
 }
 
-document.querySelector("#activate-flight").addEventListener("click", () =>{
-    classesToggle("#flight", "enabled")
-    classesToggle("#flight", "disabled")
-})
+document.querySelector("#activate-flight").addEventListener("click", targetButton)
+document.querySelector("#activate-mindreading").addEventListener("click", targetButton)
 
-document.querySelector("#activate-mindreading").addEventListener("click", ()=>{
-    classesToggle("#mindreading", "enabled")
-    classesToggle("#mindreading", "disabled")
-})
+// const classesToggle = (selector, classToToggle) => {
+//     document.querySelector(selector).classList.toggle(classToToggle)
+// }
+
+// document.querySelector("#activate-flight").addEventListener("click", () =>{
+//     classesToggle("#flight", "enabled")
+//     classesToggle("#flight", "disabled")
+// })
+
+// document.querySelector("#activate-mindreading").addEventListener("click", ()=>{
+//     classesToggle("#mindreading", "enabled")
+//     classesToggle("#mindreading", "disabled")
+// })
 
 const sectionArr = document.querySelectorAll("section")
 
